@@ -1,0 +1,2 @@
+GET http://localhost:8080/library/books
+//POST http://localhost:8080/library/newBook

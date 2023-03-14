@@ -1,2 +1,10 @@
-GET http://localhost:8080/library/books
-//POST http://localhost:8080/library/newBook
+### Get All books
+GET http://localhost:8080/library/all_books
+### Add a new book
+POST http://localhost:8080/library/add?title=Plumb&authorName=George Bacovia
+### Get a specific book
+GET http://localhost:8080/library/book?title=Plumb
+### Modify a book's title
+PUT http://localhost:8080/library/modify_book?title=Plumb&author=George Bacovia&new_title=Pluumb
+### Modify a book's author and title
+PUT http://localhost:8080/library/modify_book?title=Pluumb&author=George Bacovia&new_title=Pluumb&new_author=Geoorge B

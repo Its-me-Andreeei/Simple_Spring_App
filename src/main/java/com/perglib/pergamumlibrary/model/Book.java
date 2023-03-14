@@ -1,6 +1,8 @@
 package com.perglib.pergamumlibrary.model;
 
-public class Book {
+import java.util.Objects;
+
+public class Book implements Comparable<Book>{
     private String authorName;
     private String bookName;
 
@@ -23,5 +25,21 @@ public class Book {
 
     public void setBookName(String bookName) {
         this.bookName = bookName;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        //using null-safe equals : Objects.equals(x,y)
+        if(obj instanceof Book)
+            return Objects.equals(((Book) obj).bookName, this.bookName) && Objects.equals(((Book) obj).authorName, this.authorName);
+        else return false;
+    }
+
+    @Override
+    public int compareTo(Book o) {
+        if( this.authorName.compareTo(o.authorName) == 0)
+            return this.bookName.compareTo(o.bookName);
+        else
+            return this.authorName.compareTo(o.authorName);
     }
 }
